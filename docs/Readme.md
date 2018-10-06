@@ -175,50 +175,50 @@ Launch daemons are background tasks that are created at boot.
 
 **MUST HAVE:**
 
-- --UKERN must be able to create process-structures similar to those in the XNU kernel
-- --UKERN must be able to call functions using the system() interface for executing commands or binary functions that are located in the same address space
-- --UKERN must be able to simulate user and kernel credentials for processes.
-- --UKERN must be able to run multiple processes at the same runtime.
-- --UKERN must be able to control and communicate to processes
-- --UKERN must be able to keep track of process identifiers of processes and must be able to get a reference to the corresponding process
-- --UKERN must be able to load and execute binary extensions
-- --UKERN must be able to get the main entry from a binary extension
+- UKERN must be able to create process-structures similar to those in the XNU kernel
+- UKERN must be able to call functions using the system() interface for executing commands or binary functions that are located in the same address space
+- UKERN must be able to simulate user and kernel credentials for processes.
+- UKERN must be able to run multiple processes at the same runtime.
+- UKERN must be able to control and communicate to processes
+- UKERN must be able to keep track of process identifiers of processes and must be able to get a reference to the corresponding process
+- UKERN must be able to load and execute binary extensions
+- UKERN must be able to get the main entry from a binary extension
 - --UKERN must be able to get the processor register information in real-time
 
 **SHOULD HAVE:**
 
-- --UKERN should be able to simulate a fully accessible file system structure
-- --UKERN should be able to control the simulated file system structure via a virtual file system
-- --UKERN should be able to dynamically manage allocations and free memory
-- --UKERN should have interfaces for performing encryption via RSA-4096
-- --UKERN should have interfaces for performing hashing via SHA512, SHA256, SHA1 and MD5
-- --UKERN should be able to connect with an endpoint for requesting updates
-- --UKERN should be able to launch predefined background processes upon initialization stage
-- --UKERN should be able to lock functions to certain users or credentials only.
+- UKERN should be able to simulate a fully accessible file system structure
+- UKERN should be able to control the simulated file system structure via a virtual file system
+- UKERN should be able to dynamically manage allocations and free memory
+- UKERN should have interfaces for performing encryption via RSA-4096
+- UKERN should have interfaces for performing hashing via SHA512, SHA256, SHA1 and MD5
+- UKERN should be able to connect with an endpoint for requesting updates
+- UKERN should be able to launch predefined background processes upon initialization stage
+- UKERN should be able to lock functions to certain users or credentials only.
 
 **COULD HAVE:**
 
-- --UKERN could have the ability to, conforming to the MACH standards, control other processes via a task port and task.
-- --UKERN could be able to compress memory in the address space when limited space is left.
-- --UKERN could be able to communicate with real kernel drivers through a simple interface
-- --UKERN could be able to cache symbols of commonly used functions into an sqlite3 database
-- --UKERN could be able to map functions and files at a fixed address.
-- --UKERN could be able to backup user-data PGP-encrypted to a remote server via an API
-- --UKERN could be able to get update information via an API
+- UKERN could have the ability to, conforming to the MACH standards, control other processes via a task port and task.
+- UKERN could be able to compress memory in the address space when limited space is left.
+- UKERN could be able to communicate with real kernel drivers through a simple interface
+- UKERN could be able to cache symbols of commonly used functions into an sqlite3 database
+- UKERN could be able to map functions and files at a fixed address.
+- UKERN could be able to backup user-data PGP-encrypted to a remote server via an API
+- UKERN could be able to get update information via an API
 
 **WONT HAVE:**
 
-- --UKERN will not focus on implementing global security standards due to it being designed mainly for debugging and development purposes, thanks to the sandbox in which it is executed no personal data will be affected by possible vulnerabilities.
+- UKERN will not focus on implementing global security standards due to it being designed mainly for debugging and development purposes, thanks to the sandbox in which it is executed no personal data will be affected by possible vulnerabilities.
 
 **NON-FUNCTIONAL:**
 
-- --UKERN should be able to run inside Apple&#39;s sandbox
-- --UKERN should not use any exploits or rely on vulnerabilities in Apple&#39;s Operating System
-- --UKERN should be well-documented so that it can be re-used or developed further by any developer
-- --UKERN should not be used for commercial purposes
-- --UKERN&#39;s algorithms should be written in c and there should be Objective-C classes wrapping the data structures.
-- --UKERN should be able to run on any iOS device.
-- --UKERN should have documentation available via the web including the source code of which the syntax should be highlighted
+- UKERN should be able to run inside Apple&#39;s sandbox
+- UKERN should not use any exploits or rely on vulnerabilities in Apple's Operating System
+- UKERN should be well-documented so that it can be re-used or developed further by any developer
+- UKERN should not be used for commercial purposes
+- UKERN's algorithms should be written in c and there should be Objective-C classes wrapping the data structures.
+- UKERN should be able to run on any iOS device.
+- UKERN should have documentation available via the web including the source code of which the syntax should be highlighted
 
 
 
@@ -255,7 +255,7 @@ Based on logical algorithms it can decide to perform operations without the user
 
 The system may communicate with other actors, update database information or change the flow of the application&#39;s logic.
 
-** PROCES**
+**PROCES**
 
 Processes are contexts that contain functions executed separately at the same time inside the system.
 
@@ -331,9 +331,9 @@ _Each individual component should be tested according to this test plan, the tim
 
 ###### **Resources**
 
-- --_The documentation at_ [_https://ukern.exploitation.cool/docs_](https://ukern.exploitation.cool/docs)
-- --_The design guidelines at_ [_https://ukern.exploitation.cool/docs/designguidelines.pdf_](https://ukern.exploitation.cool/docs/designguidelines.pdf)
-- --_The concept at_ [_https://ukern.exploitation.cool/docs/concept.docx_](https://ukern.exploitation.cool/docs/concept.docx)
+- _The documentation at_ [_https://ukern.exploitation.cool/docs_](https://ukern.exploitation.cool/docs)
+- _The design guidelines at_ [_https://ukern.exploitation.cool/docs/designguidelines.pdf_](https://ukern.exploitation.cool/docs/designguidelines.pdf)
+- _The concept at_ [_https://ukern.exploitation.cool/docs/concept.docx_](https://ukern.exploitation.cool/docs/concept.docx)
 
 ###### **Out**** of ****Scope**
 
@@ -341,9 +341,9 @@ _Security is in this test plan out of scope, memory leaks that are not fatal to 
 
 ###### **Required**** resources**
 
-- --A computer running any form of macOS with Xcode
-- --A physical iOS device and/or an iPhone Simulator
-- --The project for testing available at [https://ukern.exploitation.cool/sources/testsource-latest.zip](https://ukern.exploitation.cool/sources/testsource-latest.zip)
+- A computer running any form of macOS with Xcode
+- A physical iOS device and/or an iPhone Simulator
+- The project for testing available at [https://ukern.exploitation.cool/sources/testsource-latest.zip](https://ukern.exploitation.cool/sources/testsource-latest.zip)
 
 ###### **Dependencies**
 
