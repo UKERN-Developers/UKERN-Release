@@ -89,19 +89,19 @@ A breakout for code signing is being worked on that will use Return Oriented Pro
 
 Therefore I came up with the following problem:
 
-- --Developer License holders of Apple are able to sign and distribute libraries and apps through websites using the iTunes services protocol to install them
-- --SSL encryption on the host is required for distribution
-- --An application from the same developer with the same bundle ID as an installed Application from the same developer is updated rather than installed over, which leaves the previous user data there.
-- --You cannot launch code signed libraries from within the documents directory or temporary directory of the sandbox, the libraries need to be in the same directory as the App container which is marked as non-writable after installation.
+- Developer License holders of Apple are able to sign and distribute libraries and apps through websites using the iTunes services protocol to install them
+- SSL encryption on the host is required for distribution
+- An application from the same developer with the same bundle ID as an installed Application from the same developer is updated rather than installed over, which leaves the previous user data there.
+- You cannot launch code signed libraries from within the documents directory or temporary directory of the sandbox, the libraries need to be in the same directory as the App container which is marked as non-writable after installation.
 
 The solution for this is as following:
 
-- --License holders of Apple Inc. can install their exported signing certificate bundle and private key into the UKERN application.
-- --UKERN integrates an Webserver with SSL support and the user is asked and required to install a self-signed SSL certificate, this is to match the requirement of having an SSL encryption for installing code signed web distributed apps
-- --UKERN contains a writeable copy of itself in the documents directory of the app, this copy is downloaded directly from GitHub releases so that always the latest version will be used. The application will be (gpg, **NOT** code signed) signed by me, [s.voigtlander@jailed.ml](mailto:s.voigtlander@jailed.ml) , to verify the integrity of the download.
-- --New modules can be downloaded into the documents directory of UKERN&#39;s app bundle.
-- --A new build of UKERN with the same bundle ID is made with the dynamic libraries signed into the new application that is in the documents directory. This is distributed over the local webserver with ssl and UKERN will request the user to install the new application.
-- --The new UKERN application is installed over the old UKERN application and the user now has UKERN with the old user data still intact and the new modules installed.
+- License holders of Apple Inc. can install their exported signing certificate bundle and private key into the UKERN application.
+- UKERN integrates an Webserver with SSL support and the user is asked and required to install a self-signed SSL certificate, this is to match the requirement of having an SSL encryption for installing code signed web distributed apps
+- UKERN contains a writeable copy of itself in the documents directory of the app, this copy is downloaded directly from GitHub releases so that always the latest version will be used. The application will be (gpg, **NOT** code signed) signed by me, [s.voigtlander@jailed.ml](mailto:s.voigtlander@jailed.ml) , to verify the integrity of the download.
+- New modules can be downloaded into the documents directory of UKERN&#39;s app bundle.
+- A new build of UKERN with the same bundle ID is made with the dynamic libraries signed into the new application that is in the documents directory. This is distributed over the local webserver with ssl and UKERN will request the user to install the new application.
+- The new UKERN application is installed over the old UKERN application and the user now has UKERN with the old user data still intact and the new modules installed.
 
 # The logic
 
@@ -299,7 +299,7 @@ The API on the remote side may invoke the kernel to perform an update or extends
 
 ##### UKERN SYSTEM INTERFACE (KERNEL)
 
-##### **Legend**
+##### Legend
 
 RQ = Requirement
 
@@ -309,49 +309,49 @@ UT = Unit Test
 
 ITC = Integration Test Case
 
-##### **Introduction**
+##### Introduction
 
 This test plan focusses mainly on the operability of the primary components and requirements of the system.
 
-###### **Goal**
+###### Goal
 
 _The test is meant to prove the system&#39;s primary requirements are met and function properly and conform the guidelines._
 
-###### **Scope**
+###### Scope
 
 _ The core of the system with all its components. Per Example: The extension loader, the process creation and process management functionality._
 
-###### **Performance**** measurements**:
+###### Performance measurements:
 
 _The system should never enter an endless loop in which the user is unable to interact with the system or the system is unable to provide and execute its primary requirements._
 
-###### **Schedule**
+###### Schedule
 
 _Each individual component should be tested according to this test plan, the time for those tests is not defined._
 
-###### **Resources**
+###### Resources
 
 - _The documentation at_ [_https://ukern.exploitation.cool/docs_](https://ukern.exploitation.cool/docs)
 - _The design guidelines at_ [_https://ukern.exploitation.cool/docs/designguidelines.pdf_](https://ukern.exploitation.cool/docs/designguidelines.pdf)
 - _The concept at_ [_https://ukern.exploitation.cool/docs/concept.docx_](https://ukern.exploitation.cool/docs/concept.docx)
 
-###### **Out**** of ****Scope**
+###### Out of Scope
 
 _Security is in this test plan out of scope, memory leaks that are not fatal to the performance and functionality of primary modules are out of scope as well._
 
-###### **Required**** resources**
+###### Required resources
 
 - A computer running any form of macOS with Xcode
 - A physical iOS device and/or an iPhone Simulator
 - The project for testing available at [https://ukern.exploitation.cool/sources/testsource-latest.zip](https://ukern.exploitation.cool/sources/testsource-latest.zip)
 
-###### **Dependencies**
+###### Dependencies
 
 _The system depends on an environment capable of running iOS higher than 10.3.3_
 
 _The system depends on the ability to use dynamic loader functionality such as dlsym and specific mach system calls._
 
-###### **Risks**
+###### Risks
 
 _The main risks are in the allocation and creation of processes as they are user controllable and use components bridged from Objective-C to C. This may lead to bugs in the management of the memory and these bugs usually can be identified by a crash log mentioning_ **KERN\_INVALID\_ADDR at** _._
 
@@ -361,13 +361,13 @@ _The log can be identified by the name of the application (UKERN)._
 
 _Please include these log files if available when submitting a bug report, log files mentioning_ **&quot;0x8badf00d&quot;** _are out of scope._
 
-###### **Exclusions**
+###### Exclusions
 
 _The liblorgnette component will not be included in this test plan._
 
 _The utilities component will not be included in this test plan._
 
-##### **Test Coverage**
+##### Test Coverage**
 
 The tests will cover at least all primary requirements and will also test user interaction, they will not be limited to the system itself.
 
@@ -377,9 +377,9 @@ _&#39;Just follow the white rabbit.&#39;_ **– Morpheus (From: The Matrix)**
 
 (Image not included yet)
 
-##### **Test Cases**
+##### Test Cases
 
-###### **TC1**
+###### TC1
 
 ###### Title
 
@@ -438,7 +438,7 @@ The system spawns a process and executes the provided function and arguments tha
 
 \_
 
-##### **TC2**
+##### TC2
 
 ###### Title
 
