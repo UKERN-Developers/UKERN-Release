@@ -98,7 +98,7 @@ The solution for this is as following:
 
 - License holders of Apple Inc. can install their exported signing certificate bundle and private key into the UKERN application.
 - UKERN integrates an Webserver with SSL support and the user is asked and required to install a self-signed SSL certificate, this is to match the requirement of having an SSL encryption for installing code signed web distributed apps
-- UKERN contains a writeable copy of itself in the documents directory of the app, this copy is downloaded directly from GitHub releases so that always the latest version will be used. The application will be (gpg, **NOT** code signed) signed by me, [s.voigtlander@jailed.ml](mailto:s.voigtlander@jailed.ml) , to verify the integrity of the download.
+- UKERN contains a writeable copy of itself in the documents directory of the app, this copy is downloaded directly from GitHub releases so that always the latest version will be used. The application will be (gpg, **NOT** code signed) signed by me, (To be announced) , to verify the integrity of the download.
 - New modules can be downloaded into the documents directory of UKERN&#39;s app bundle.
 - A new build of UKERN with the same bundle ID is made with the dynamic libraries signed into the new application that is in the documents directory. This is distributed over the local webserver with ssl and UKERN will request the user to install the new application.
 - The new UKERN application is installed over the old UKERN application and the user now has UKERN with the old user data still intact and the new modules installed.
