@@ -437,19 +437,3 @@ The system spawns a process and executes the provided function and arguments tha
 \_
 
 \_
-
-##### TC2
-
-###### Title
-
-###### Actors
-
-###### Definitions
-
-###### Description
-
-###### Expected Result
-
-###### Exceptions
-
-###### Results
